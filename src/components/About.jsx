@@ -47,11 +47,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in TypeScript,Data Management, Data Science, Machine Learning,Python programming and
-        JavaScript. I also have expertise in frameworks like React, Node.js, and
-        Flask. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems.
+        I'm a skilled software developer with experience in Data Management,
+        Data Science, Machine Learning, Python programming and JavaScript. I
+        also have expertise in frameworks like React, Node.js, and Flask. I'm a
+        quick learner and collaborate closely with clients to create efficient,
+        scalable, and user-friendly solutions that solve real-world problems.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

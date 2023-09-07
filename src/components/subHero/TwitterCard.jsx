@@ -33,7 +33,7 @@ const TwitterCard = () => {
           <Button
             className={
               isFollowed
-                ? "bg-transparent text-foreground border-default-200"
+                ? "bg-default-700 text-white border-default-200"
                 : " bg-default-600 text-default-100"
             }
             // color="primary"
@@ -46,7 +46,7 @@ const TwitterCard = () => {
           </Button>
         </CardHeader>
         <CardBody className="px-3 py-0 text-small text-white ">
-          <p>Frontend developer and AI/ML enthusiast. Lets Connect</p>
+          <p>Mimi napenda coding na story za AI. Lets Connect</p>
           <span className="pt-2">
             #Frontend
             <span className="py-2" aria-label="computer" role="img">
