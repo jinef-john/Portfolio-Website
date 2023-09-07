@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { MusicPic, Nairobi, TwitterCard, Circle } from "./subHero";
-// import { Circle } from "./SubHero";
+
+import { SectionWrapper } from "../hoc";
 
 const Hero = () => {
   return (
@@ -27,14 +28,12 @@ const Hero = () => {
             <p className={`${styles.heroSubText} mt-2 ml-4 text-white-100`}>
               I create beautiful Web Interfaces and 3D visuals.
             </p>
-            <p className="text-white ml-2 hidden sm:block">
-              I am an experienced developer skilled in Python, Java, FrontEnd
-              Development, Machine learning, Javascript and its frameworks.
-              <span className="hidden md:inline-block">
-                My activities are much beyond my stream of education. ⚡ I am
-                involved in a lot of organizational works in college related to
-                clubs, hackathons, fests and workshops.
-              </span>
+            <p className="text-white hidden sm:block sm:text-[15px] xs:text-[15px] text-[16px] lg:leading-[30px]">
+              Data Science | Master Data Management | FrontEnd Dev | FrontEnd
+              Dev,
+              <br />
+              <span className="text-[#915eff]">A-I | Machine learning </span>|
+              JavaScript+React | Project Management
             </p>
           </div>
         </div>
@@ -47,24 +46,52 @@ const Hero = () => {
             <motion.div
               className=" p-2 mr-6"
               animate={{
-                y: [0, 50, 25, 70, 0],
+                // y: [0, 50, 25, 70, 0],
+                scale: [1.2, 1.6, 1.3],
               }}
               transition={{
                 duration: 20,
-                repeat: Infinity,
-                repeatType: "loop",
+                repeat: 20,
+                repeatType: "mirror",
+                type: "tween",
+                damping: 300,
+                stiffness: 10,
+                repeatDelay: 3,
               }}
             >
               <Circle />
             </motion.div>
           </div>
           <div className="flex">
-            <div className=" p-2">
+            <motion.div
+              className=" p-2"
+              animate={{
+                y: [0, 8, 15, 24, 21, 48, 12, 0],
+              }}
+              transition={{
+                duration: 30,
+                repeat: 20,
+                repeatType: "mirror",
+                repeatDelay: 2.5,
+              }}
+            >
               <Nairobi />
-            </div>
-            <div className=" p-2 ">
+            </motion.div>
+            <motion.div
+              className=" p-2 "
+              animate={{
+                y: [0, 8, 4, 0],
+                opacity: [1, 0.7, 0.9, 1],
+              }}
+              transition={{
+                duration: 25,
+                repeatType: "mirror",
+                repeat: 10,
+                repeatDelay: 3,
+              }}
+            >
               <MusicPic />
-            </div>
+            </motion.div>
           </div>
           {/* <div className="w-1/3 p-2">Something Here</div>
           <div className="w-1/3 p-2">PlaceHolder</div>
@@ -78,4 +105,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default SectionWrapper(Hero, "#");
