@@ -3,11 +3,11 @@ import { Card, CardFooter, Image, Button } from "@nextui-org/react";
 
 const Nairobi = () => {
   return (
-    <Card isFooterBlurred radius="lg" className="border-none">
+    <Card isFooterBlurred radius="lg" className="border-none ">
       <Image
         alt="Woman listing to music"
-        className="object-cover"
-        height={200}
+        className="object-contain"
+        height={100}
         src="https://images.unsplash.com/photo-1611144727915-ef30a08aaeb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmFpcm9iaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
         width={200}
       />
