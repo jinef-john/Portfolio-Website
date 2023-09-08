@@ -4,18 +4,12 @@ import { motion } from "framer-motion";
 
 const Notif = () => {
   return (
-    <div>
-      <Chip color="warning" variant="solid">
+    <div className="flex gap-4">
+      <Chip color="warning" variant="bordered">
         Technology
       </Chip>
-      <Chip color="warning" variant="bordered">
-        shapes
-      </Chip>
-      <Chip color="warning" variant="light">
-        society,
-      </Chip>
       <Chip color="warning" variant="flat">
-        connecting
+        connects
       </Chip>
       <Chip color="warning" variant="faded">
         people
@@ -24,7 +18,7 @@ const Notif = () => {
         worldwide
       </Chip>
       <Chip color="warning" variant="dot" className="text-white">
-        ❤️
+        🇰🇪
       </Chip>
     </div>
   );

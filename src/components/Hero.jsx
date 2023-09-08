@@ -7,10 +7,6 @@ import { MusicPic, Nairobi, TwitterCard, Circle, Notif } from "./subHero";
 import { SectionWrapper } from "../hoc";
 
 const Hero = () => {
-  const chipVariants = {
-    initial: { opacity: 0, y: -10 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
   return (
     <section className="relative w-full h-screen mx-auto ">
       <div
@@ -68,13 +64,16 @@ const Hero = () => {
           </div>
           <motion.div
             className="w-1/3 p-2"
-            className="flex gap-4"
-            initial="initial"
-            animate="animate"
-            variants={chipVariants}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 3, ease: "easeInOut" },
+            }}
           >
             <Notif />
           </motion.div>
+
           <div className="flex">
             <motion.div
               className=" p-2"
