@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import { MusicPic, Nairobi, TwitterCard, Circle } from "./subHero";
+import { MusicPic, Nairobi, TwitterCard, Circle, Notif } from "./subHero";
 
 import { SectionWrapper } from "../hoc";
 
@@ -93,16 +93,17 @@ const Hero = () => {
               <MusicPic />
             </motion.div>
           </div>
-          {/* <div className="w-1/3 p-2">Something Here</div>
-          <div className="w-1/3 p-2">PlaceHolder</div>
+          <div className="w-1/3 p-2">
+            <Notif />
+          </div>
+          {/* <div className="w-1/3 p-2">PlaceHolder</div>
           <div className="w-1/3 p-2">Something</div>
           <div className="w-1/3 p-2">Content</div>
           <div className="w-1/3 p-2">Some</div> */}
         </div>
       </div>
-      {/* <ComputersCanvas /> */}
     </section>
   );
 };
 
-export default SectionWrapper(Hero, "#");
+export default SectionWrapper(Hero, "");
