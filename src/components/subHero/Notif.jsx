@@ -1,29 +1,30 @@
 import React from "react";
 import { Chip } from "@nextui-org/react";
+import { motion } from "framer-motion";
 
 const Notif = () => {
   return (
-    <div className="flex gap-4">
+    <div>
       <Chip color="warning" variant="solid">
-        Solid
+        Technology
       </Chip>
       <Chip color="warning" variant="bordered">
-        Bordered
+        shapes
       </Chip>
       <Chip color="warning" variant="light">
-        Light
+        society,
       </Chip>
       <Chip color="warning" variant="flat">
-        Flat
+        connecting
       </Chip>
       <Chip color="warning" variant="faded">
-        Faded
+        people
       </Chip>
       <Chip color="warning" variant="shadow">
-        Shadow
+        worldwide
       </Chip>
-      <Chip color="warning" variant="dot">
-        Dot
+      <Chip color="warning" variant="dot" className="text-white">
+        ❤️
       </Chip>
     </div>
   );

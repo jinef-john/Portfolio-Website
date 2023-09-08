@@ -7,6 +7,10 @@ import { MusicPic, Nairobi, TwitterCard, Circle, Notif } from "./subHero";
 import { SectionWrapper } from "../hoc";
 
 const Hero = () => {
+  const chipVariants = {
+    initial: { opacity: 0, y: -10 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
   return (
     <section className="relative w-full h-screen mx-auto ">
       <div
@@ -62,6 +66,15 @@ const Hero = () => {
               <Circle />
             </motion.div>
           </div>
+          <motion.div
+            className="w-1/3 p-2"
+            className="flex gap-4"
+            initial="initial"
+            animate="animate"
+            variants={chipVariants}
+          >
+            <Notif />
+          </motion.div>
           <div className="flex">
             <motion.div
               className=" p-2"
@@ -73,6 +86,7 @@ const Hero = () => {
                 repeat: 20,
                 repeatType: "mirror",
                 repeatDelay: 2.5,
+                delay: 1,
               }}
             >
               <Nairobi />
@@ -84,18 +98,17 @@ const Hero = () => {
                 opacity: [1, 0.7, 0.9, 1],
               }}
               transition={{
-                duration: 25,
+                duration: 6,
                 repeatType: "mirror",
                 repeat: 10,
                 repeatDelay: 3,
+                delay: 0.8,
               }}
             >
               <MusicPic />
             </motion.div>
           </div>
-          <div className="w-1/3 p-2">
-            <Notif />
-          </div>
+
           {/* <div className="w-1/3 p-2">PlaceHolder</div>
           <div className="w-1/3 p-2">Something</div>
           <div className="w-1/3 p-2">Content</div>
