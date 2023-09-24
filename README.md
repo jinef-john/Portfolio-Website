@@ -2,7 +2,7 @@
 
 ## Description
 
-I create a 3D portfolio using React and Three.js.
+My 3d Portfolio Website using React and three js
 
 ## Installation
 
