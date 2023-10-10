@@ -14,16 +14,6 @@ import { textVariant } from "../utils/motion";
 
 import PropTypes from "prop-types";
 
-ExperienceCard.propTypes = {
-  experience: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    company_name: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
-    iconBg: PropTypes.string.isRequired,
-    points: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }).isRequired,
-};
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -67,6 +57,18 @@ const ExperienceCard = ({ experience }) => {
       </ul>
     </VerticalTimelineElement>
   );
+};
+
+
+ExperienceCard.propTypes = {
+  experience: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    iconBg: PropTypes.string.isRequired,
+    points: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 };
 
 const Experience = () => {
