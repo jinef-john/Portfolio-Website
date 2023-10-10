@@ -4,7 +4,7 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { MusicPic, Nairobi, TwitterCard, Circle, Notif } from "./subHero";
 
-import { SectionWrapper } from "../hoc";
+// import { SectionWrapper } from "../hoc";
 
 const Hero = () => {
   return (
@@ -23,7 +23,7 @@ const Hero = () => {
               className={`${styles.heroHeadText}
              text-white`}
             >
-              Hello, I'm <span className="text-[#915eff]">Jinef</span>
+                Hello, I&rsquo;m <span className="text-[#915eff]">Jinef</span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 ml-4 text-white-100`}>
               I create beautiful Web Interfaces and 3D visuals.
@@ -114,8 +114,10 @@ const Hero = () => {
           <div className="w-1/3 p-2">Some</div> */}
         </div>
       </div>
+
+      {/* <ComputersCanvas /> */}
     </section>
   );
 };
 
-export default SectionWrapper(Hero, "");
+export default Hero;
