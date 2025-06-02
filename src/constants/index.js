@@ -216,7 +216,7 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/jinef-john",
+    source_code_link: "https://skoolpro.vercel.app/",
   },
   {
     name: "Job IT",

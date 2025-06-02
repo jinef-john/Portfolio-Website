@@ -12,7 +12,7 @@ import {
   Star,
   TrendingUp,
   Users,
-  Target
+  Target,
 } from "lucide-react";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -47,35 +47,39 @@ const ExperienceCard = ({ experience, index }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%)",
+        background:
+          "linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%)",
         color: "#fff",
         borderRadius: "16px",
         border: "1px solid rgba(255, 255, 255, 0.1)",
-        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)",
+        boxShadow:
+          "0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)",
         backdropFilter: "blur(10px)",
       }}
-      contentArrowStyle={{ 
+      contentArrowStyle={{
         borderRight: "7px solid rgba(30, 41, 59, 0.8)",
-        filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
+        filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))",
       }}
       date={
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: index * 0.1 + 0.2 }}
-          className={`flex items-center gap-2 font-semibold ${getStatusColor(experience.date)}`}
+          className={`flex items-center gap-2 font-semibold ${getStatusColor(
+            experience.date
+          )}`}
         >
           <Calendar className="w-4 h-4" />
           <span>{experience.date}</span>
         </motion.div>
       }
-      iconStyle={{ 
+      iconStyle={{
         background: `linear-gradient(135deg, ${experience.iconBg}, rgba(255, 255, 255, 0.1))`,
         border: "2px solid rgba(255, 255, 255, 0.2)",
         boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)",
       }}
       icon={
-        <motion.div 
+        <motion.div
           className="flex justify-center items-center w-full h-full"
           whileHover={{ scale: 1.1, rotate: 5 }}
           transition={{ duration: 0.2 }}
@@ -102,19 +106,27 @@ const ExperienceCard = ({ experience, index }) => {
             </h3>
             <div className="flex items-center gap-2 text-gray-300 mb-3">
               {getCompanyIcon(experience.company_name)}
-              <span className="text-lg font-semibold">{experience.company_name}</span>
+              <span className="text-lg font-semibold">
+                {experience.company_name}
+              </span>
             </div>
           </div>
-          
+
           {/* Status Badge */}
-          <div className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${
-            experience.date.includes("Present") 
-              ? "bg-green-500/20 text-green-400 border border-green-500/30" 
-              : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-          }`}>
-            <div className={`w-2 h-2 rounded-full ${
-              experience.date.includes("Present") ? "bg-green-400" : "bg-blue-400"
-            } animate-pulse`}></div>
+          <div
+            className={`flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium ${
+              experience.date.includes("Present")
+                ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                : "bg-blue-500/20 text-blue-400 border border-blue-500/30"
+            }`}
+          >
+            <div
+              className={`w-2 h-2 rounded-full ${
+                experience.date.includes("Present")
+                  ? "bg-green-400"
+                  : "bg-blue-400"
+              } animate-pulse`}
+            ></div>
             {experience.date.includes("Present") ? "Current" : "Completed"}
           </div>
         </div>
@@ -171,10 +183,26 @@ ExperienceCard.propTypes = {
 // Statistics Component for Experience Overview
 const ExperienceStats = () => {
   const stats = [
-    { number: "4+", label: "Positions", icon: <Building className="w-5 h-5 text-blue-400" /> },
-    { number: "3+", label: "Years", icon: <Clock className="w-5 h-5 text-green-400" /> },
-    { number: "50+", label: "Projects", icon: <Target className="w-5 h-5 text-purple-400" /> },
-    { number: "15+", label: "Clients", icon: <Users className="w-5 h-5 text-orange-400" /> },
+    {
+      number: "4+",
+      label: "Positions",
+      icon: <Building className="w-5 h-5 text-blue-400" />,
+    },
+    {
+      number: "3+",
+      label: "Years",
+      icon: <Clock className="w-5 h-5 text-green-400" />,
+    },
+    {
+      number: "50+",
+      label: "Projects",
+      icon: <Target className="w-5 h-5 text-purple-400" />,
+    },
+    {
+      number: "15+",
+      label: "Clients",
+      icon: <Users className="w-5 h-5 text-orange-400" />,
+    },
   ];
 
   return (
@@ -202,7 +230,9 @@ const ExperienceStats = () => {
             <div className="mb-3 p-3 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-white/10 w-fit mx-auto group-hover:border-purple-500/30 transition-all duration-300">
               {stat.icon}
             </div>
-            <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
+            <div className="text-2xl font-bold text-white mb-1">
+              {stat.number}
+            </div>
             <div className="text-gray-400 text-sm">{stat.label}</div>
           </motion.div>
         ))}
@@ -236,9 +266,10 @@ const Experience = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-4 text-secondary text-[17px] max-w-3xl mx-auto text-center leading-[30px]"
         >
-          A comprehensive overview of my professional journey, showcasing diverse experiences 
-          across multiple domains including AI/ML, web development, and data science. Each role 
-          has contributed to building a robust foundation in modern technology solutions.
+          A comprehensive overview of my professional journey, showcasing
+          diverse experiences across multiple domains including AI/ML, web
+          development, and data science. Each role has contributed to building a
+          robust foundation in modern technology solutions.
         </motion.p>
       </motion.div>
 
@@ -258,7 +289,7 @@ const Experience = () => {
               index={index}
             />
           ))}
-          
+
           {/* Timeline End Element */}
           <VerticalTimelineElement
             iconStyle={{
