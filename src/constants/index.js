@@ -3,18 +3,6 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
   meta,
   starbucks,
   tesla,
@@ -22,9 +10,13 @@ import {
   carrent,
   jobit,
   tripguide,
-  threejs,
+  github,
 } from "../assets";
+import nyumbani from "../assets/nyumbani.png";
+import soko from "../assets/soko.png";
+import skoolpro from "../assets/skoolpro.png";
 
+import cheetsheet from "../assets/cheetsheet.png";
 export const navLinks = [
   {
     id: "about",
@@ -62,55 +54,67 @@ const services = [
 const technologies = [
   {
     name: "HTML 5",
-    icon: html,
+    icon: "devicon-html5-plain colored",
   },
   {
     name: "CSS 3",
-    icon: css,
+    icon: "devicon-css3-plain colored",
   },
   {
     name: "JavaScript",
-    icon: javascript,
+    icon: "devicon-javascript-plain colored",
   },
   {
     name: "TypeScript",
-    icon: typescript,
+    icon: "devicon-typescript-plain colored",
   },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: "devicon-react-original colored",
   },
   {
     name: "Redux Toolkit",
-    icon: redux,
+    icon: "devicon-redux-original colored",
   },
   {
     name: "Tailwind CSS",
-    icon: tailwind,
+    icon: "devicon-tailwindcss-plain colored",
   },
   {
     name: "Node JS",
-    icon: nodejs,
+    icon: "devicon-nodejs-plain colored",
   },
   {
     name: "MongoDB",
-    icon: mongodb,
+    icon: "devicon-mongodb-plain colored",
   },
   {
     name: "Three JS",
-    icon: threejs,
+    icon: "devicon-threejs-original colored",
   },
   {
-    name: "git",
-    icon: git,
+    name: "Git",
+    icon: "devicon-git-plain colored",
   },
   {
-    name: "figma",
-    icon: figma,
+    name: "Figma",
+    icon: "devicon-figma-plain colored",
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "Docker",
+    icon: "devicon-docker-plain colored",
+  },
+  {
+    name: "Python",
+    icon: "devicon-python-plain colored",
+  },
+  {
+    name: "Next.js",
+    icon: "devicon-nextjs-original colored",
+  },
+  {
+    name: "Express.js",
+    icon: "devicon-express-original colored",
   },
 ];
 
@@ -118,53 +122,52 @@ const experiences = [
   {
     title: "FreeLancer",
     company_name: "Fivver/Upwork",
-    icon: tesla,
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkgtI3lDDZ6mWtxZoFmhaGKMVSWUQWHILeIA&s",
     iconBg: "#E6DEDD",
     date: "Feb 2022 - Jun 2022",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
+      "Deploying applications to production environments and ensuring their stability.",
+      "Customizing and optimizing applications for performance and scalability.",
     ],
   },
   {
     title: "Data Scientist/ML Engineer",
     company_name: "TSC Commision",
-    icon: starbucks,
+    icon: "https://pbs.twimg.com/profile_images/1468181083577626624/xz85n9gy_400x400.jpg",
     iconBg: "#383E56",
     date: "Aug 2022 - Nov 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Maintained databases and data pipelines to ensure data integrity and availability.",
+      "Learnt Network protocols and security measures to protect sensitive data.",
+      "Configured Printers and other devices to ensure proper connectivity and functionality.",
+      "Customer support and troubleshooting for hardware and software issues.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "DevOps Engineer",
+    company_name: "AWS Internship",
+    icon: "https://cdn.worldvectorlogo.com/logos/amazon-web-services.svg",
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Implemented CI/CD pipelines to automate testing and deployment processes.",
+      "Monitored system performance and optimized resource usage.",
+      "Collaborated with development teams to ensure seamless integration of new features.",
+      "Maintained cloud infrastructure and managed server configurations.",
     ],
   },
   {
     title: "Full stack Developer",
     company_name: "WorkForce",
-    icon: meta,
+    icon: github,
     iconBg: "#E6DEDD",
     date: "Feb 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining web applications and Native applications using React.js, Node.js, and other related technologies.",
+      "Building and consuming RESTful APIs to connect front-end and back-end systems.",
+      "Microservices architecture to enhance scalability and maintainability.",
     ],
   },
 ];
@@ -198,9 +201,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Nyumbani Rentals",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A web application that allows users to search for rental properties, view property details, and contact landlords directly.",
     tags: [
       {
         name: "react",
@@ -214,14 +217,22 @@ const projects = [
         name: "tailwind",
         color: "pink-text-gradient",
       },
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
     ],
-    image: carrent,
-    source_code_link: "https://skoolpro.vercel.app/",
+    image: nyumbani,
+    source_code_link: "https://main.d1fdqtm1sq1vr1.amplifyapp.com/",
   },
   {
-    name: "Job IT",
+    name: "soko",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "An eccommerce platform that enables users to buy and sell products online, featuring a user-friendly interface and secure payment options.",
     tags: [
       {
         name: "react",
@@ -236,13 +247,13 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/jinef-john",
+    image: soko,
+    source_code_link: "https://soko-zeta.vercel.app/",
   },
   {
-    name: "Trip Guide",
+    name: "skoolpro",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A comprehensive school management system that allows administrators to manage student records, attendance, and grades efficiently.",
     tags: [
       {
         name: "nextjs",
@@ -257,8 +268,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/jinef-john",
+    image: skoolpro,
+    source_code_link: "https://skool-kappa.vercel.app/",
   },
 ];
 
