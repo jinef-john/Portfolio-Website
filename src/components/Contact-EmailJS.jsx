@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from '@formspree/react';
 import {
   Mail,
   Phone,
@@ -15,13 +16,12 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xldneplj");
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null); // 'success', 'error', or null
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,38 +31,20 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setStatus(null);
-
-    try {
-      // Using Formspree (replace YOUR_FORM_ID with your actual Formspree form ID)
-      const formspreeId =
-        import.meta.env.VITE_FORMSPREE_FORM_ID || "YOUR_FORM_ID";
-      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-        }),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setStatus("error");
-    } finally {
-      setLoading(false);
+    
+    // Create FormData with proper field names for Formspree
+    const formData = new FormData();
+    formData.append('name', form.name);
+    formData.append('email', form.email);
+    formData.append('message', form.message);
+    
+    await handleSubmit(formData);
+    
+    // Clear form if successful
+    if (state.succeeded) {
+      setForm({ name: "", email: "", message: "" });
     }
   };
 
@@ -71,28 +53,28 @@ const Contact = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden relative z-10">
+      <div
+        className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden relative z-10`}
+      >
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="flex-[0.75] bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl border border-slate-700/50 p-8 rounded-2xl"
+          className="xl:flex-1 bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 p-8 rounded-2xl shadow-2xl"
         >
-          {/* Header */}
           <div className="mb-8">
-            <p className={`${styles.sectionSubText} text-purple-400`}>
+            <p className={`${styles.sectionSubText} text-slate-400`}>
               Get in touch
             </p>
-            <h3 className={`${styles.sectionHeadText} text-white`}>
-              Contact
-              <span className="text-gradient bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                .
-              </span>
+            <h3
+              className={`${styles.sectionHeadText} bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent`}
+            >
+              Contact.
             </h3>
             <p className="text-slate-400 text-lg mt-4 max-w-md">
-              Ready to bring your ideas to life? Let's collaborate and create
-              something amazing together.
+              Ready to bring your ideas to life? Let&apos;s collaborate and
+              create something amazing together.
             </p>
           </div>
 
@@ -116,16 +98,16 @@ const Contact = () => {
           </div>
 
           {/* Status Messages */}
-          {status === "success" && (
+          {state.succeeded && (
             <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-xl flex items-center gap-3">
               <CheckCircle className="w-5 h-5 text-green-400" />
               <p className="text-green-400 font-medium">
-                Message sent successfully! I'll get back to you soon.
+                Message sent successfully! I&apos;ll get back to you soon.
               </p>
             </div>
           )}
 
-          {status === "error" && (
+          {state.errors && state.errors.length > 0 && (
             <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-xl flex items-center gap-3">
               <AlertCircle className="w-5 h-5 text-red-400" />
               <p className="text-red-400 font-medium">
@@ -135,7 +117,7 @@ const Contact = () => {
           )}
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={onSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-white font-medium mb-2">
@@ -150,6 +132,11 @@ const Contact = () => {
                   placeholder="John Doe"
                   className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 text-white rounded-xl py-3 px-4 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                 />
+                <ValidationError 
+                  prefix="Name" 
+                  field="name"
+                  errors={state.errors}
+                />
               </div>
               <div>
                 <label className="block text-white font-medium mb-2">
@@ -163,6 +150,11 @@ const Contact = () => {
                   required
                   placeholder="john@example.com"
                   className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 text-white rounded-xl py-3 px-4 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
+                />
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
                 />
               </div>
             </div>
@@ -180,16 +172,21 @@ const Contact = () => {
                 placeholder="Tell me about your project..."
                 className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 text-white rounded-xl py-3 px-4 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 resize-none"
               />
+              <ValidationError 
+                prefix="Message" 
+                field="message"
+                errors={state.errors}
+              />
             </div>
 
             <motion.button
               type="submit"
-              disabled={loading}
+              disabled={state.submitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:from-slate-600 disabled:to-slate-700 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2"
             >
-              {loading ? (
+              {state.submitting ? (
                 <>
                   <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                   Sending...
@@ -215,4 +212,5 @@ const Contact = () => {
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+const WrappedContact = SectionWrapper(Contact, "contact");
+export default WrappedContact;
