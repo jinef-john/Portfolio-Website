@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm, ValidationError } from "@formspree/react";
 import {
   Mail,
   Phone,
@@ -33,15 +33,15 @@ const Contact = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Create FormData with proper field names for Formspree
     const formData = new FormData();
-    formData.append('name', form.name);
-    formData.append('email', form.email);
-    formData.append('message', form.message);
-    
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("message", form.message);
+
     await handleSubmit(formData);
-    
+
     // Clear form if successful
     if (state.succeeded) {
       setForm({ name: "", email: "", message: "" });
@@ -132,8 +132,8 @@ const Contact = () => {
                   placeholder="John Doe"
                   className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 text-white rounded-xl py-3 px-4 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                 />
-                <ValidationError 
-                  prefix="Name" 
+                <ValidationError
+                  prefix="Name"
                   field="name"
                   errors={state.errors}
                 />
@@ -151,8 +151,8 @@ const Contact = () => {
                   placeholder="john@example.com"
                   className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 text-white rounded-xl py-3 px-4 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300"
                 />
-                <ValidationError 
-                  prefix="Email" 
+                <ValidationError
+                  prefix="Email"
                   field="email"
                   errors={state.errors}
                 />
@@ -172,8 +172,8 @@ const Contact = () => {
                 placeholder="Tell me about your project..."
                 className="w-full bg-slate-800/50 backdrop-blur-sm border border-slate-600/50 text-white rounded-xl py-3 px-4 placeholder:text-slate-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 resize-none"
               />
-              <ValidationError 
-                prefix="Message" 
+              <ValidationError
+                prefix="Message"
                 field="message"
                 errors={state.errors}
               />

@@ -355,3 +355,155 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Custom overrides for react-vertical-timeline-component */
+.vertical-timeline::before {
+  background: rgba(255, 255, 255, 0.1) !important;
+  width: 2px !important;
+  display: block !important;
+}
+
+.vertical-timeline {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  padding: 2em 0 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.vertical-timeline-element {
+  margin: 2em 0 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.vertical-timeline-element-content {
+  position: relative !important;
+  margin-left: 0 !important;
+  border-radius: 16px !important;
+  padding: 1.5em !important;
+  display: block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.vertical-timeline-element-content-arrow {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+  width: 60px !important;
+  height: 60px !important;
+  left: 50% !important;
+  margin-left: -30px !important;
+  display: flex !important;
+  visibility: visible !important;
+}
+
+.vertical-timeline-element-date {
+  display: block !important;
+  float: none !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 600 !important;
+  margin: 1em 0 !important;
+  visibility: visible !important;
+}
+
+/* Force desktop layout */
+@media only screen and (min-width: 768px) {
+  .vertical-timeline::before {
+    left: 50% !important;
+    margin-left: -1px !important;
+  }
+  
+  .vertical-timeline-element-content {
+    margin-left: 0 !important;
+    padding: 1.5em !important;
+    width: 45% !important;
+    display: block !important;
+  }
+  
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-content {
+    float: right !important;
+    margin-left: 55% !important;
+  }
+  
+  .vertical-timeline-element:nth-child(odd) .vertical-timeline-element-content {
+    float: left !important;
+    margin-left: 0 !important;
+  }
+  
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-content-arrow {
+    top: 20px !important;
+    right: auto !important;
+    left: -15px !important;
+    border-color: transparent !important;
+    border-right-color: rgba(30, 41, 59, 0.8) !important;
+  }
+  
+  .vertical-timeline-element:nth-child(odd) .vertical-timeline-element-content-arrow {
+    top: 20px !important;
+    left: auto !important;
+    right: -15px !important;
+    border-color: transparent !important;
+    border-left-color: rgba(30, 41, 59, 0.8) !important;
+  }
+  
+  .vertical-timeline-element-date {
+    position: absolute !important;
+    width: 120px !important;
+    left: auto !important;
+    top: 6px !important;
+  }
+  
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-date {
+    left: -140px !important;
+    text-align: right !important;
+  }
+  
+  .vertical-timeline-element:nth-child(odd) .vertical-timeline-element-date {
+    right: -140px !important;
+    text-align: left !important;
+  }
+}
+
+/* Additional desktop specific styles */
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline-element-content {
+    width: 40% !important;
+  }
+  
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-content {
+    margin-left: 60% !important;
+  }
+  
+  .vertical-timeline-element-date {
+    width: 150px !important;
+  }
+  
+  .vertical-timeline-element:nth-child(even) .vertical-timeline-element-date {
+    left: -170px !important;
+  }
+  
+  .vertical-timeline-element:nth-child(odd) .vertical-timeline-element-date {
+    right: -170px !important;
+  }
+}
+
+/* Mobile-first approach - ensure timeline works on all devices */
+.vertical-timeline-custom-styles {
+  min-height: 100px !important;
+}
+
+/* Force visibility and proper layout on all screen sizes */
+.vertical-timeline,
+.vertical-timeline-element,
+.vertical-timeline-element-content {
+  opacity: 1 !important;
+  transform: none !important;
+}

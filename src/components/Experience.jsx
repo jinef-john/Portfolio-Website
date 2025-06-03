@@ -281,7 +281,10 @@ const Experience = () => {
         variants={fadeIn("", "", 0.2, 1)}
         className="mt-20 flex flex-col"
       >
-        <VerticalTimeline lineColor="rgba(255, 255, 255, 0.1)">
+        <VerticalTimeline 
+          lineColor="rgba(255, 255, 255, 0.1)"
+          className="vertical-timeline-custom-styles"
+        >
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
