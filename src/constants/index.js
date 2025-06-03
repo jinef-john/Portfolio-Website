@@ -271,6 +271,27 @@ const projects = [
     image: skoolpro,
     source_code_link: "https://skool-kappa.vercel.app/",
   },
+  {
+    name: "CheetSheet",
+    description:
+      "A web application that provides quick access to programming language syntax and commands, helping developers save time.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: cheetsheet,
+    source_code_link: "https://big-o-cheatsheet.netlify.app/",
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };
