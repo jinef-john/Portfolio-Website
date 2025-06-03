@@ -1,4 +1,9 @@
+// Detect mobile for performance optimization
+const isMobile = () =>
+  typeof window !== "undefined" && window.innerWidth <= 768;
+
 export const textVariant = (delay) => {
+  const duration = isMobile() ? 0.6 : 1.25; // Faster on mobile
   return {
     hidden: {
       y: -50,
@@ -9,14 +14,19 @@ export const textVariant = (delay) => {
       opacity: 1,
       transition: {
         type: "spring",
-        duration: 1.25,
-        delay: delay,
+        duration: duration,
+        delay: delay || 0,
       },
     },
   };
 };
 
 export const fadeIn = (direction, type, delay, duration) => {
+  const mobileDuration = isMobile()
+    ? Math.min(duration || 0.8, 0.8)
+    : duration || 1.5;
+  const mobileDelay = isMobile() ? Math.min(delay || 0.2, 0.2) : delay || 0;
+
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -28,9 +38,9 @@ export const fadeIn = (direction, type, delay, duration) => {
       y: 0,
       opacity: 1,
       transition: {
-        type: type,
-        delay: delay,
-        duration: duration,
+        type: type || "tween",
+        delay: mobileDelay,
+        duration: mobileDuration,
         ease: "easeOut",
       },
     },
