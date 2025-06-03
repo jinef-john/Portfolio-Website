@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -18,13 +19,13 @@ const MobileNavFallback = ({ active, setActive }) => {
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('.mobile-nav-container')) {
+      if (isOpen && !event.target.closest(".mobile-nav-container")) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
   }, [isOpen]);
 
   const getNavIcon = (title) => {
@@ -119,13 +120,17 @@ const MobileNavFallback = ({ active, setActive }) => {
                         }}
                       >
                         <motion.div
-                          animate={active === link.title ? { rotate: [0, 360] } : {}}
+                          animate={
+                            active === link.title ? { rotate: [0, 360] } : {}
+                          }
                           transition={{ duration: 0.5 }}
                           className="flex-shrink-0"
                         >
                           {getNavIcon(link.title)}
                         </motion.div>
-                        <span className="font-medium text-lg">{link.title}</span>
+                        <span className="font-medium text-lg">
+                          {link.title}
+                        </span>
                         <motion.div
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}

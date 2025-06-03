@@ -7,14 +7,7 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import {
-  Home,
-  User,
-  Briefcase,
-  Mail,
-  Code2,
-  Download,
-} from "lucide-react";
+import { Home, User, Briefcase, Mail, Code2, Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { navLinks } from "../constants";

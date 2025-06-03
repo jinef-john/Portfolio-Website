@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import {
