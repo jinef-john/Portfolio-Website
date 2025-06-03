@@ -6,11 +6,11 @@ import { fadeIn, slideIn, textVariant } from "../utils/motion";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen mx-auto overflow-hidden">
+    <section className="relative w-full h-screen mx-auto overflow-hidden hero-section viewport-constrain">
       {/* Main Hero Content */}
-      <div className="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Left Side - Main Content */}
-        <div className="relative z-10 pt-20 lg:pt-32 hero-mobile-padding">
+        <div className="relative z-10 pt-20 lg:pt-32 hero-mobile-padding w-full overflow-hidden">
           <div className="max-w-4xl lg:max-w-3xl">
             {/* Hero Badge */}
             <motion.div
@@ -46,19 +46,97 @@ const Hero = () => {
                 solutions that drive business growth.
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">
-                  Data Science
-                </span>
-                <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">
-                  AI/ML
-                </span>
-                <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">
-                  Full Stack
-                </span>
-                <span className="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-sm">
-                  React/JS
-                </span>
+              {/* Enhanced Skills Showcase */}
+              <div className="mt-6 space-y-4">
+                {/* Primary Skills */}
+                <div className="flex flex-wrap gap-2">
+                  <motion.span
+                    whileHover={{ scale: 1.05, glow: true }}
+                    className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 rounded-full text-sm border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300"
+                  >
+                    Data Science
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300"
+                  >
+                    AI/ML
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1 bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 rounded-full text-sm border border-green-500/30 hover:border-green-400/50 transition-all duration-300"
+                  >
+                    Full Stack
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-300 rounded-full text-sm border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300"
+                  >
+                    React/Next.js
+                  </motion.span>
+                </div>
+
+                {/* Secondary Skills */}
+                <div className="flex flex-wrap gap-2">
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-indigo-300 rounded-full text-xs border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300"
+                  >
+                    Microservices
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-teal-500/20 to-green-500/20 text-teal-300 rounded-full text-xs border border-teal-500/30 hover:border-teal-400/50 transition-all duration-300"
+                  >
+                    Kafka
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 rounded-full text-xs border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300"
+                  >
+                    API Gateways
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-pink-500/20 to-rose-500/20 text-pink-300 rounded-full text-xs border border-pink-500/30 hover:border-pink-400/50 transition-all duration-300"
+                  >
+                    CI/CD
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-full text-xs border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300"
+                  >
+                    Monorepo
+                  </motion.span>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2">
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-gray-500/20 to-slate-500/20 text-gray-300 rounded-full text-xs border border-gray-500/30 hover:border-gray-400/50 transition-all duration-300"
+                  >
+                    Express.js
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 rounded-full text-xs border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300"
+                  >
+                    MongoDB
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-violet-500/20 to-purple-500/20 text-violet-300 rounded-full text-xs border border-violet-500/30 hover:border-violet-400/50 transition-all duration-300"
+                  >
+                    Node.js
+                  </motion.span>
+                  <motion.span
+                    whileHover={{ scale: 1.05 }}
+                    className="px-2 py-1 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 text-blue-300 rounded-full text-xs border border-blue-600/30 hover:border-blue-500/50 transition-all duration-300"
+                  >
+                    TypeScript
+                  </motion.span>
+                </div>
               </div>
             </motion.div>
 
@@ -83,9 +161,9 @@ const Hero = () => {
                 </motion.div>
                 <div className="text-white/60 text-xs md:text-sm">Projects</div>
               </div>
-              <div className="text-center">
+              <div className="hidden md:block text-center">
                 <motion.div
-                  className="text-2xl md:text-3xl font-bold text-white mb-1"
+                  className=" text-2xl md:text-3xl font-bold text-white mb-1"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{
                     duration: 2,
@@ -100,7 +178,7 @@ const Hero = () => {
                   Years Exp
                 </div>
               </div>
-              <div className="text-center">
+              <div className="hidden md:block text-center">
                 <motion.div
                   className="text-2xl md:text-3xl font-bold text-white mb-1"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -115,7 +193,7 @@ const Hero = () => {
                 </motion.div>
                 <div className="text-white/60 text-xs md:text-sm">Clients</div>
               </div>
-              <div className="text-center">
+              <div className="hidden md:block text-center">
                 <motion.div
                   className="text-2xl md:text-3xl font-bold text-white mb-1"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -129,6 +207,98 @@ const Hero = () => {
                   99%
                 </motion.div>
                 <div className="text-white/60 text-xs md:text-sm">Success</div>
+              </div>
+            </motion.div>
+
+            {/* Enhanced Tech Stack Showcase - Desktop Only */}
+            <motion.div
+              variants={fadeIn("up", "spring", 0.5, 1)}
+              initial="hidden"
+              animate="show"
+              className="hidden lg:block mt-8 mb-6"
+            >
+              <div className="bg-gradient-to-r from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <h3 className="text-white text-lg font-semibold mb-4 flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5 text-purple-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                    />
+                  </svg>
+                  Technical Expertise
+                </h3>
+
+                <div className="space-y-3">
+                  {/* Architecture & Infrastructure */}
+                  <div>
+                    <p className="text-gray-400 text-sm mb-2">
+                      Architecture & Infrastructure
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-indigo-300 rounded-lg text-sm border border-indigo-500/30 hover:border-indigo-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        Microservices
+                      </motion.span>
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 rounded-lg text-sm border border-yellow-500/30 hover:border-yellow-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        API Gateways
+                      </motion.span>
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 rounded-lg text-sm border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        Monorepo
+                      </motion.span>
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-teal-500/20 to-green-500/20 text-teal-300 rounded-lg text-sm border border-teal-500/30 hover:border-teal-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        Apache Kafka
+                      </motion.span>
+                    </div>
+                  </div>
+
+                  {/* Development & DevOps */}
+                  <div>
+                    <p className="text-gray-400 text-sm mb-2">
+                      Development & DevOps
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-pink-500/20 to-rose-500/20 text-pink-300 rounded-lg text-sm border border-pink-500/30 hover:border-pink-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        CI/CD Actions
+                      </motion.span>
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-orange-500/20 to-red-500/20 text-orange-300 rounded-lg text-sm border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        Next.js
+                      </motion.span>
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-gray-500/20 to-slate-500/20 text-gray-300 rounded-lg text-sm border border-gray-500/30 hover:border-gray-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        Express.js
+                      </motion.span>
+                      <motion.span
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-3 py-1 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 rounded-lg text-sm border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 cursor-pointer"
+                      >
+                        MongoDB
+                      </motion.span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -206,7 +376,7 @@ const Hero = () => {
         </div>
 
         {/* Floating Cards Grid - Mobile Responsive */}
-        <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
+        <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
           {/* Mobile Layout - Optimized positioning to avoid content overlap */}
           <div className="lg:hidden">
             {/* TwitterCard - Bottom Left */}
@@ -214,7 +384,7 @@ const Hero = () => {
               variants={fadeIn("up", "spring", 0.6, 1)}
               initial="hidden"
               animate="show"
-              className="absolute bottom-40 left-4 pointer-events-auto transform scale-65"
+              className="hidden absolute bottom-40 left-4 pointer-events-auto transform scale-65"
             >
               <TwitterCard />
             </motion.div>
@@ -302,7 +472,7 @@ const Hero = () => {
               variants={fadeIn("left", "spring", 0.6, 1)}
               initial="hidden"
               animate="show"
-              className="absolute top-20 right-8 pointer-events-auto"
+              className="absolute top-20 right-4 lg:right-8 pointer-events-auto max-w-[calc(100vw-2rem)]"
             >
               <TwitterCard />
             </motion.div>
@@ -340,7 +510,7 @@ const Hero = () => {
               variants={slideIn("right", "spring", 1.0, 1)}
               initial="hidden"
               animate="show"
-              className="absolute top-1/2 right-16 transform -translate-y-1/2 pointer-events-auto"
+              className="absolute top-1/2 right-4 lg:right-16 transform -translate-y-1/2 pointer-events-auto max-w-[calc(100vw-2rem)]"
             >
               <Notif />
             </motion.div>
@@ -387,7 +557,7 @@ const Hero = () => {
                   ease: "easeInOut",
                 },
               }}
-              className="absolute bottom-20 right-8 pointer-events-auto"
+              className="absolute bottom-20 right-4 lg:right-8 pointer-events-auto max-w-[calc(100vw-2rem)]"
             >
               <MusicPic />
             </motion.div>

@@ -12,7 +12,7 @@ const TwitterCard = () => {
   const [isFollowed, setIsFollowed] = React.useState(false);
   return (
     <>
-      <Card className="w-[360px] max-w-[400px] bg-white-100/20">
+      <Card className="w-[280px] sm:w-[320px] lg:w-[360px] max-w-[90vw] bg-white-100/20">
         <CardHeader className="justify-between">
           <div className="flex gap-5">
             <Avatar

@@ -13,6 +13,19 @@
   color-scheme: dark;
 }
 
+/* Prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -298,6 +311,31 @@
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
+}
+
+/* Prevent horizontal scroll and white space */
+.hero-section {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure all floating elements stay within viewport */
+.floating-element {
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
+}
+
+/* Fix for initial load layout shift */
+section {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Additional viewport constraint */
+.viewport-constrain {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Enhanced About Section Styles */

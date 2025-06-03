@@ -3,13 +3,16 @@ import { Card, CardFooter, Image, Button } from "@nextui-org/react";
 
 const Nairobi = () => {
   return (
-    <Card isFooterBlurred radius="lg" className="border-none ">
+    <Card
+      isFooterBlurred
+      radius="lg"
+      className="border-none w-[180px] sm:w-[200px] max-w-[90vw]"
+    >
       <Image
         alt="Woman listing to music"
-        className="object-contain"
+        className="object-contain w-full"
         height={100}
         src="https://images.unsplash.com/photo-1611144727915-ef30a08aaeb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmFpcm9iaXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-        width={200}
       />
       <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
         <p className="text-tiny text-white/80">Available soon.</p>

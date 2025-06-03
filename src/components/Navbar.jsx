@@ -210,17 +210,18 @@ const Navbarr = () => {
 
           <div className="flex flex-col gap-4 px-4 relative z-10">
             {navLinks.map((link, index) => (
-              <NavbarMenuItem key={index}>
+              <NavbarMenuItem key={`${link.id}-${index}`}>
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  className="w-full"
                 >
                   <Link
                     href={`#${link.id}`}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 relative overflow-hidden ${
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 relative overflow-hidden w-full ${
                       active === link.title
                         ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg"
                         : "text-white/80 hover:text-white hover:bg-white/10"
@@ -228,7 +229,6 @@ const Navbarr = () => {
                     onClick={() => {
                       setActive(link.title);
                       setIsMenuOpen(false);
-                      window.scrollTo(0, 0);
                     }}
                   >
                     <motion.div
@@ -254,21 +254,24 @@ const Navbarr = () => {
             ))}
 
             {/* Mobile CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="mt-4"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button
-                className="w-full bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-medium py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                startContent={<Download className="w-5 h-5" />}
+            <NavbarMenuItem>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="mt-4 w-full"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Download Resume
-              </Button>
-            </motion.div>
+                <Button
+                  className="w-full bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white font-medium py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  startContent={<Download className="w-5 h-5" />}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Download Resume
+                </Button>
+              </motion.div>
+            </NavbarMenuItem>
           </div>
         </NavbarMenu>
       </Navbar>
