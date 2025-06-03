@@ -88,7 +88,7 @@ const Contact = () => {
             <div className="bg-gradient-to-br from-blue-500/10 to-green-500/10 backdrop-blur-lg border border-blue-500/20 rounded-xl p-4 text-center">
               <Phone className="w-6 h-6 text-blue-400 mx-auto mb-2" />
               <p className="text-white text-sm font-medium">Phone</p>
-              <p className="text-slate-400 text-xs">+254 123 456 789</p>
+              <p className="text-slate-400 text-xs">+254 706545870</p>
             </div>
             <div className="bg-gradient-to-br from-green-500/10 to-purple-500/10 backdrop-blur-lg border border-green-500/20 rounded-xl p-4 text-center">
               <MapPin className="w-6 h-6 text-green-400 mx-auto mb-2" />
