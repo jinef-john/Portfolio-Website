@@ -114,4 +114,5 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+const ExperienceSection = SectionWrapper(Experience, "work");
+export default ExperienceSection;
